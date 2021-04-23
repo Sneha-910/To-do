@@ -1,0 +1,46 @@
+<div class="todo-item" [class.completed]="todo.completed">
+  <div class="checkbox-container">
+    <input
+      type="checkbox"
+      id="cb1"
+      (click)="onTodoClicked()"
+      [(ngModel)]="todo.completed"
+    />
+  </div>
+
+  <div class="todo-text">
+    <!-- <input type="text"> -->
+
+    <!--  {{todo.text}}-{{todo.isEdit}}  -->
+
+    <div *ngIf="!isEdit">
+      {{ todo.text }}
+    </div>
+
+    <div *ngIf="isEdit">
+      <input type="text" class="form-control" [(ngModel)]="todo.text" />
+    </div>
+  </div>
+
+  <div class="todo-controls-box" (click)="$event.stopPropagation()">
+    <div class="todo-control-button" (click)="onEditClicked()">
+      <i class="material-icons"> edit</i>
+    </div>
+
+    <div class="todo-control-button is-danger" (click)="onDeleteClicked()">
+      <i class="material-icons"> delete</i>
+    </div>
+
+    <div class="todo-control-button" (click)="onCommentClicked()">
+      <i class="material-icons"> comment</i>
+    </div>
+  </div>
+</div>
+
+<div class="todo-text">
+  {{ todo.comments }}
+  <br>
+  <!-- {{todo.comments}}  // -->
+
+  <!-- input value from dialog {{sneha}}  -->
+</div>

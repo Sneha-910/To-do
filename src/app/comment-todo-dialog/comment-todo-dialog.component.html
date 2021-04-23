@@ -1,0 +1,29 @@
+<h1 class="title">Enter Comment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="commentData" (ngSubmit)="onFormSubmit()">
+    <div class="field">
+      <div class="control">
+        <input
+          type="text"
+          formControlName="comment"
+          placeholder="Type your comment here.."
+        />
+      </div>
+    </div>
+
+    <br />
+    <div class="field is-grouped is-grouped-right">
+      <div class="control">
+        <button type="button" class="button is-light" (click)="close()">
+          Cancel
+        </button>
+      </div>
+
+      <div class="control">
+        <button type="submit" class="button alt-gradient-button">
+          Add Comment
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

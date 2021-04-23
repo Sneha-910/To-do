@@ -1,0 +1,21 @@
+<h1 class="title">Are you sure you want to delete?</h1>
+<div mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        
+        <br>
+        <div class="field is-grouped is-grouped-right">
+            <div class="control">
+                <button type="button" class ="button is-light" (click)="close" > Cancle</button>
+
+            </div>
+
+            <div class="control">
+                <button type="submit" class="button alt-gradient-button"> Delete</button>
+
+            </div>
+
+        </div>
+
+
+    </form>
+</div>   
